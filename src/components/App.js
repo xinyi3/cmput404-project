@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import SideMenu from './SideMenu.js'
 import NewPost from './NewPost.js'
-import PostList from './PostList.js'
+import PostList from './PostList.jsx'
 import {Grid,Col,Row} from 'react-bootstrap'
 
 
@@ -20,8 +20,12 @@ class App extends Component {
 			      		<SideMenu/>
 			      	</Col>
 			      	<Col xs={9} md={9} >
-			      		<NewPost/>
-			      		<PostList/>
+			      		<Row>
+			      			<NewPost/>
+			      		</Row>
+			      		<Row>
+			      			<PostList/>
+			   			</Row>
 			      	</Col>
 			    </Row>
 		    </Grid>
