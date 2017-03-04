@@ -25,7 +25,8 @@ class Post extends Component {
 
   render() {
     return (
-      <div className='post'>
+      <div className='post'
+        key={this.props.id}>
         <Panel>
             <div className='poster-header'>
                 {this.props.username}
@@ -53,6 +54,7 @@ class Post extends Component {
 }
 
 Post.propTypes = {
+  id: PropTypes.number.isRequired,
   postText: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired
 };
