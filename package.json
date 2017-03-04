@@ -5,6 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:nyan": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test --reporter nyan",
     "test:watch": "npm run test -- --watch",
     "build": "webpack --progress --colors"
   },
@@ -19,6 +20,7 @@
     "css-loader": "^0.26.1",
     "eslint": "^3.15.0",
     "eslint-plugin-react": "^6.9.0",
+    "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
