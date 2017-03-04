@@ -18,5 +18,9 @@ font-awesome: http://fontawesome.io/
 es6: http://es6-features.org/  
 npm version: '3.10.8'  
 
+sideMenu style: http://bootsnipp.com/snippets/featured/user-profile-sidebar
+newPost style： http://bootsnipp.com/snippets/featured/comment-box
+
 # About this project
 This project is for CMPUT 404, see the [project description here](https://github.com/abramhindle/CMPUT404-project-socialdistribution).
+
