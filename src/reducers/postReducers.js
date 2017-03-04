@@ -1,8 +1,12 @@
 export default function reducer(state={
     fetching: false,
     fetched: false,
-    funStuff: null,
     error: null,
+    posts:[
+      {
+
+      }  
+    ]
   }, action) {
 
     switch (action.type) {
