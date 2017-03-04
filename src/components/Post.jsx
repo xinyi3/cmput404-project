@@ -26,14 +26,13 @@ class Post extends Component {
 
   render() {
     return (
-      <div className='post'
-        key={this.props.id}>
+      <div className='post'>
         <Panel>
             <div className='poster-header'>
                 {this.props.username}
             </div>
             <div className='post-body'>
-                {this.props.postText}
+                {this.props.textContent}
             </div>
             <div className='post-footer'>
                 <CommentList comments={this.props.comments}/>
@@ -57,8 +56,8 @@ class Post extends Component {
 Post.propTypes = {
   comments: PropTypes.array,   
   id: PropTypes.number.isRequired,
-  postText: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  textContent: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
 };
 
 export default Post;
