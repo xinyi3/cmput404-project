@@ -4,6 +4,7 @@ import SideMenu from './SideMenu.js'
 import NewPost from './NewPost.js'
 import PostList from './PostList.jsx'
 import {Grid,Col,Row} from 'react-bootstrap'
+import '../../style/style.scss'
 
 
 var containerStyle = {
