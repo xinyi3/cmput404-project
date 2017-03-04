@@ -1,0 +1,114 @@
+/*
+Snippets License (MIT license)
+Copyright (c) 2013 Bootsnipp.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+/* http://bootsnipp.com/snippets/featured/user-profile-sidebar keenthemes (http://bootsnipp.com/keenthemes)*/
+/* side-menu container */
+.side-menu {
+  margin: 20px 0;
+}
+
+/* side-menu sidebar */
+.side-menu-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.side-menu-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.side-menu-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.side-menu-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.side-menu-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.side-menu-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.side-menu-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.side-menu-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.side-menu-usermenu {
+  margin-top: 30px;
+}
+
+.side-menu-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.side-menu-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.side-menu-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.side-menu-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.side-menu-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.side-menu-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.side-menu-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* side-menu Content */
+.side-menu-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
