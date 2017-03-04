@@ -15,9 +15,9 @@ class CreatePost extends Component {
     this.handlePost = this.handlePost.bind(this);
   }
 
-  handleTextChange(e) {
+  handleTextChange(event) {
     this.setState({
-      text: e.target.value
+      text: event.target.value
     });
   }
 
