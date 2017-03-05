@@ -41,16 +41,18 @@ class Post extends Component {
             </div>
             <div className='post-footer'>
                 <CommentList comments={this.props.comments}/>
-                <FormControl
-                  type="text"
-                  value={this.state.newCommentText}
-                  placeholder="Add a comment"
-                  onChange={this.handleChangeComment}
-                />
-                <Button
-                  onClick={this.handleAddComment}>
-                  Add Comment
-                </Button>
+                <div className='add-comment'>
+                  <FormControl
+                    type="text"
+                    value={this.state.newCommentText}
+                    placeholder="Add a comment"
+                    onChange={this.handleChangeComment}
+                  />
+                  <Button
+                    onClick={this.handleAddComment}>
+                    Add Comment
+                  </Button>
+                </div>
             </div>
         </Panel>
       </div>
