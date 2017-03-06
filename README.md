@@ -1,12 +1,24 @@
 [![Build Status](https://travis-ci.org/TianZhiWang/cmput404-project.svg?branch=master)](https://travis-ci.org/TianZhiWang/cmput404-project)  
 
-# Installation
+# Installation of Client
 npm install  
 npm start  
 
 http://localhost:8080/webpack-dev-server/  
 
 p.s. use sudo npm install on linux  
+
+# Installation of Server
+'''
+> pip -V
+> pip 9.0.1 from /Library/Python/2.7/site-packages (python 2.7)
+'''
+
+'''
+> source ./venv/bin/activate
+'''
+
+
 
 # Commiting
 Remember that you should reference issues in your commits when the [commit is closing an issue](https://help.github.com/articles/closing-issues-via-commit-messages/).  
