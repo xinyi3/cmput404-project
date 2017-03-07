@@ -15,6 +15,9 @@ build
 npm-debug.log
 .vscode
 
+# python bin files
+*.pyc
+
 # python virtual environments
 venv
 
