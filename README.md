@@ -8,17 +8,28 @@ http://localhost:8080/webpack-dev-server/
 
 p.s. use sudo npm install on linux  
 
-# Installation of Server
-'''
+# Server
+## Installation
+Ensure that you have a current version of pip
+```
 > pip -V
 > pip 9.0.1 from /Library/Python/2.7/site-packages (python 2.7)
-'''
+```
 
-'''
+```
 > source ./venv/bin/activate
-'''
+```
 
+First source your virtual envronment!
+```
+> pip install -r requirements.txt
+```
 
+## Running The Server
+TODO
+
+# Deploying to Heroku
+TODO
 
 # Commiting
 Remember that you should reference issues in your commits when the [commit is closing an issue](https://help.github.com/articles/closing-issues-via-commit-messages/).  
