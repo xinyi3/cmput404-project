@@ -1,4 +1,5 @@
-let assert = require('assert');
+import assert from 'assert';
+import {describe, it} from 'mocha';
 
 describe('Array', function() {
   describe('#indexOf()', function() {
