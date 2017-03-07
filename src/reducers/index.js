@@ -1,27 +1,27 @@
 import {combineReducers} from 'redux';
 import * as types from '../types';
 
-// Schema based on normalizr https://github.com/paularmstrong/normalizr (MIT)
+// Schema based on normalizr https://github.com/paularmstrong/normalizr/blob/master/docs/quickstart.md (MIT)
 const mockposts = [
   {
-    id: 20525,
+    id: '20525',
     author: {
-      id: 43231,
+      id: '43231',
       name: 'Ken Adams'
     },
     text: 'I can see clearly now',
     comments: [
       {
-        id: 1232,
+        id: '1232',
         author: {
-          id: 96853,
+          id: '96853',
           name: 'James Bond'
         },
         text: 'You wot?'
       }, {
-        id: 7653,
+        id: '7653',
         author: {
-          id: 73841,
+          id: '73841',
           name: 'Moriarty'
         },
         text: 'yeah wot'
@@ -29,9 +29,9 @@ const mockposts = [
     ]
   },
   {
-    id: 10241,
+    id: '10241',
     author: {
-      id: 96853,
+      id: '96853',
       name: 'James Bond'
     },
     text: 'UofA is better than UofC',
@@ -41,19 +41,24 @@ const mockposts = [
 
 function posts(state=mockposts, action) {
   switch (action.type) {
-    case types.ADD_COMMENT:
-      return state.map(post => {
-        if (post.id === action.postId) {
-          return {
-            ...post,
-            comments: [
-              ...post.comments,
-              action.comment
-            ]
-          };
-        }
-        return post;
-      });
+  case types.ADD_COMMENT:
+    return state.map(post => {
+      if (post.id === action.postId) {
+        return {
+          ...post,
+          comments: [
+            ...post.comments,
+            action.comment
+          ]
+        };
+      }
+      return post;
+    });
+  case types.ADD_POST:
+    return [
+      ...state,
+      action.post
+    ];
   default:
     return state;
   }

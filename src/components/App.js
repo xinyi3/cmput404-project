@@ -17,7 +17,9 @@ class App extends Component {
               <Sidebar/>
             </Col>
             <Col md={9}>
-              <CreatePost/>
+              <CreatePost
+                addPost={this.props.addPost}
+              />
               <PostList
                 posts={this.props.posts}
                 addComment={this.props.addComment}
@@ -32,9 +34,14 @@ class App extends Component {
 
 App.propTypes = {
   addComment: PropTypes.func.isRequired,
+  addPost: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired
 };
-
+// TODO: Temporary, get this from somewhere else
+const user = {
+  id: 83757,
+  name: 'Batman'
+};
 // TODO: Move this into seperate file as container
 export default connect(
   function(stateProps, ownProps) {
@@ -44,12 +51,10 @@ export default connect(
   }, function(dispatch, ownProps) {
   return {
     addComment: function(text, postId) {
-      // TODO: Temporary, get this from somewhere else
-      const user = {
-        id: 83757,
-        name: 'Batman'
-      };
       dispatch(actions.addComment(text, postId, user));
-    }
+    },
+    addPost: function(text, textFormat) {
+      dispatch(actions.addPost(text, textFormat, user));
+    },
   };
 })(App);
