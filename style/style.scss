@@ -1,20 +1,11 @@
 /* Add styles here */
-.create-post {
-    .create-post-footer {
-        display: flex;
-        align-items: center;
+@import 'variables.scss';
 
-        .Select {
-            min-width: 100px;
-            width: 12em;
-        }
+//components
+@import 'components/Post.scss';
+@import 'components/Comment.scss';
+@import 'components/CreatePost.scss';
 
-        .post-status {
-            margin-left: auto;
-        }
-
-        & > *:not(:last-child) {
-            margin-right: 1em;
-        };
-    }
+body {
+    background-color: $primary-color-very-light;
 }

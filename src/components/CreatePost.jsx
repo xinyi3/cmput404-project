@@ -90,12 +90,8 @@ class CreatePost extends Component {
           value={this.state.text}
           placeholder='Whats on your mind?'
           onChange={this.handleTextChange}/>
-        <div className='create-post-footer'>
-          <Button
-            onClick={this.handleImageUpload}>
-            <Glyphicon glyph='picture'/>
-          </Button>
-          <ButtonGroup>
+        <ButtonToolbar className='post-options'>
+          <ButtonGroup className='post-formats'>
             <Radio
               checked={this.state.textFormat === 'plaintext'}
               inline={true}
@@ -111,18 +107,23 @@ class CreatePost extends Component {
               Markdown
             </Radio>
           </ButtonGroup>
-          <Select
+          <div className='buttons'>
+            <Select
             name='permissions'
             onChange={this.handlePermissionChange}
             options={options}
             value={this.state.permission}
-          />
-          <Button
-            className='post-status'
-            onClick={this.handlePost}>
-            Post
-          </Button>
-        </div>
+            />
+            <Button
+              onClick={this.handleImageUpload}>
+              <Glyphicon glyph='picture'/>
+            </Button>
+            <Button
+              onClick={this.handlePost}>
+              Post
+            </Button>
+          </div>
+        </ButtonToolbar>
       </div>
     );
   }

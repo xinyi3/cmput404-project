@@ -32,15 +32,17 @@ class Post extends Component {
   render() {
     return (
       <div className='post'>
-        <Panel>
-            <div className='poster-header'>
-                {this.props.author.name}
-            </div>
+          <div className='post-header'>
+            <h4>
+              {this.props.author.name}
+            </h4>
             <div className='post-body'>
-                {this.props.text}
+              {this.props.text}
             </div>
-            <div className='post-footer'>
-                <CommentList comments={this.props.comments}/>
+          </div>
+          <div className='post-footer'>
+              <CommentList comments={this.props.comments}/>
+              <div className='add-comment'>
                 <FormControl
                   type="text"
                   value={this.state.newCommentText}
@@ -51,8 +53,8 @@ class Post extends Component {
                   onClick={this.handleAddComment}>
                   Add Comment
                 </Button>
-            </div>
-        </Panel>
+              </div>
+          </div>
       </div>
     );
   }
