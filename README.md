@@ -26,10 +26,13 @@ First source your virtual envronment!
 ```
 
 ## Running The Server
-TODO
-
+```
+> python manage.py runserver
+```
 # Deploying to Heroku
-TODO
+```
+> git push heroku
+```
 
 # Commiting
 Remember that you should reference issues in your commits when the [commit is closing an issue](https://help.github.com/articles/closing-issues-via-commit-messages/).  
