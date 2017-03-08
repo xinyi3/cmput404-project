@@ -32,29 +32,29 @@ class Post extends Component {
   render() {
     return (
       <div className='post'>
-        <Panel>
-            <div className='poster-header'>
-                {this.props.author.name}
-            </div>
+          <div className='post-header'>
+            <h4>
+              {this.props.author.name}
+            </h4>
             <div className='post-body'>
-                {this.props.text}
+              {this.props.text}
             </div>
-            <div className='post-footer'>
-                <CommentList comments={this.props.comments}/>
-                <div className='add-comment'>
-                  <FormControl
-                    type="text"
-                    value={this.state.newCommentText}
-                    placeholder="Add a comment"
-                    onChange={this.handleChangeComment}
-                  />
-                  <Button
-                    onClick={this.handleAddComment}>
-                    Add Comment
-                  </Button>
-                </div>
-            </div>
-        </Panel>
+          </div>
+          <div className='post-footer'>
+              <CommentList comments={this.props.comments}/>
+              <div className='add-comment'>
+                <FormControl
+                  type="text"
+                  value={this.state.newCommentText}
+                  placeholder="Add a comment"
+                  onChange={this.handleChangeComment}
+                />
+                <Button
+                  onClick={this.handleAddComment}>
+                  Add Comment
+                </Button>
+              </div>
+          </div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ class Comment extends Component {
   render() {
     return (
       <div className='comment'>
-        <p><strong>{this.props.author.name}</strong>{this.props.text}</p>
+        <p><strong className='author-name'>{this.props.author.name}</strong>{this.props.text}</p>
       </div>
     );
   }
