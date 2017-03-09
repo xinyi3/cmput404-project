@@ -26,10 +26,34 @@ First source your virtual envronment!
 ```
 
 ## Running The Server
-TODO
-
+```
+> python manage.py runserver
+```
 # Deploying to Heroku
-TODO
+Deploy master  
+```
+> heroku login
+> git push heroku master
+```
+Deploy non-master  
+```
+> heroku login
+> git push heroku branch-name-here:master
+```
+## Heroku Tips
+Redeploy  
+```
+git commit --allow-empty -m "Deploying api"
+git push heroku master
+```
+Logs  
+```
+> heroku logs -t --app coolbears 
+```
+Settings  
+```
+heroku config:set DISABLE_COLLECTSTATIC=1
+```
 
 # Commiting
 Remember that you should reference issues in your commits when the [commit is closing an issue](https://help.github.com/articles/closing-issues-via-commit-messages/).  
