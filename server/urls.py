@@ -20,7 +20,7 @@ from server.quickstart import views
 from django.contrib import admin
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
+router.register(r'authors', views.AuthorViewSet)
 router.register(r'posts', views.PostViewSet)
 router.register(r'comments', views.CommentViewSet)
 router.register(r'following', views.FollowingRelationshipViewSet)

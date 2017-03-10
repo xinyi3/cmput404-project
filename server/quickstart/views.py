@@ -1,14 +1,14 @@
 from rest_framework import viewsets
-from server.quickstart.serializers import UserSerializer, PostSerializer, CommentSerializer, FollowingRelationshipSerializer
-from server.quickstart.models import Post, Comment, FollowingRelationship, User
+from server.quickstart.serializers import AuthorSerializer, PostSerializer, CommentSerializer, FollowingRelationshipSerializer
+from server.quickstart.models import Post, Comment, FollowingRelationship, Author
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class AuthorViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Users to be viewed or edited.
+    API endpoint that allows Authors to be viewed or edited.
     """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     """
