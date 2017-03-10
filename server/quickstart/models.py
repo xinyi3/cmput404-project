@@ -11,11 +11,14 @@ class Author(models.Model):
         return self.displayName
 
 class Post(models.Model):
-    text = models.CharField(max_length=140)
+    title = models.CharField(max_length=140)
+    content = models.CharField(max_length=140)
+    description = models.CharField(max_length=140)
+    contentType = models.CharField(max_length=32)
     author = models.ForeignKey(Author)
 
     def __unicode__(self):
-        return self.text
+        return self.title
 
 
 class Comment(models.Model):

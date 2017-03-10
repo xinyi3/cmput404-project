@@ -21,7 +21,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ('id', 'comment', 'author', 'post', 'author_id')
+        fields = ('id', 'comment', 'author', 'author_id')
 
 # When we read we get the nested data, but we only have to passed the author_id when we write
 class PostSerializer(serializers.ModelSerializer):
@@ -33,4 +33,4 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'text', 'author', 'comments', 'author_id')
+        fields = ('id', 'title', 'content', 'description', 'contentType', 'author', 'comments', 'author_id')
