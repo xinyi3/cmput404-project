@@ -21,8 +21,9 @@ from django.contrib import admin
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 router.register(r'posts', views.PostViewSet)
+router.register(r'comments', views.CommentViewSet)
+router.register(r'following', views.FollowingRelationshipViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
