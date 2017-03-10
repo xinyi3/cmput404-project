@@ -5,7 +5,7 @@ from models import Post, Comment, FollowingRelationship, User
 class FollowingRelationshipSerializer(serializers.ModelSerializer):
     class Meta:
         model = FollowingRelationship
-        fields = ('userAis', 'followingUserB')
+        fields = ('user', 'follows')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

@@ -27,6 +27,11 @@ class Comment(models.Model):
         return self.text
 
 class FollowingRelationship(models.Model):
-    userAis = models.ForeignKey(User, related_name='userAis')
-    followingUserB = models.ForeignKey(User, related_name='followingUserB')
+    # Written by http://stackoverflow.com/a/13496120 user1839132 (http://stackoverflow.com/users/1839132/user1839132),
+    # modified by Kyle Carlstrom
+    user = models.ForeignKey(User)
+    follows = models.ForeignKey(User, related_name='follows')
+
+    def __unicode__(self):
+        return str(self.user) + 'follows' + str(self.follows)
 
