@@ -10,7 +10,7 @@ class FollowingRelationshipSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('name',)
+        fields = ('id', 'name')
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -18,7 +18,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ('text', 'author', 'post')
+        fields = ('id', 'text', 'author', 'post')
 
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
@@ -26,5 +26,5 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('text', 'author', 'comments')
+        fields = ('id', 'text', 'author', 'comments')
 
