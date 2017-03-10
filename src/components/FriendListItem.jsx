@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Panel, Button, Glyphicon} from 'react-bootstrap';
+import {ListGroupItem} from 'react-bootstrap'
 
 class FriendListItem extends Component {
   createGlyphiconButton(glyph) {
@@ -11,15 +12,13 @@ class FriendListItem extends Component {
   }
   render() {
     return (
-      <div className='friend-list-item'>
-        <Panel>
-          <span>{this.props.username}</span>
-          <span>
-            {this.props.isFollower && this.createGlyphiconButton('ok')}
-            {this.props.isFollower && this.createGlyphiconButton('remove')}
+      <ListGroupItem className='friend-list-item'>
+          <span style={{marginTop:"1em"}} >{this.props.username}</span>
+          <span className="friend-list-button-group">
+            {!this.props.isFollower && this.createGlyphiconButton('ok')}
+            {!this.props.isFollower && this.createGlyphiconButton('remove')}
           </span>
-        </Panel>
-      </div>
+      </ListGroupItem>
     );
   }
 }

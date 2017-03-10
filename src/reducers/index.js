@@ -50,7 +50,7 @@ const mockFriends = [
   {
     id: '23232323',
     username: 'Feelsbadman',
-    isFollower: false
+    isFollower: true
   }
 ];
 
