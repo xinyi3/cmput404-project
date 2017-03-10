@@ -7,7 +7,7 @@ class Post extends Component {
     super(props);
 
     this.state = {
-      commentText: ''
+      newCommentText: ''
     };
 
     this.handleAddComment = this.handleAddComment.bind(this);
@@ -15,51 +15,58 @@ class Post extends Component {
   }
 
   handleAddComment() {
-    // Add a comment
+    if (this.state.newCommentText) {
+      this.props.addComment(this.state.newCommentText, this.props.id);
+      this.setState({
+        newCommentText: ''
+      });
+    }
   }
 
   handleChangeComment(event) {
     this.setState({
-      commentText: event.target.value
+      newCommentText: event.target.value
     });
   }
 
   render() {
     return (
       <div className='post'>
-        <Panel>
-            <div className='poster-header'>
-                {this.props.username}
-            </div>
+          <div className='post-header'>
+            <h4>
+              {this.props.author.name}
+            </h4>
             <div className='post-body'>
-                {this.props.textContent}
+              {this.props.text}
             </div>
-            <div className='post-footer'>
-                <CommentList comments={this.props.comments}/>
-                <div className='add-comment'>
-                  <FormControl
-                    type="text"
-                    value={this.state.commentText}
-                    placeholder="Add a comment"
-                    onChange={this.handleChangeComment}
-                  />
-                  <Button
-                    onClick={this.handleAddComment}>
-                    Add Comment
-                  </Button>
-                </div>
-            </div>
-        </Panel>
+
+          </div>
+          <div className='post-footer'>
+              <CommentList comments={this.props.comments}/>
+              <div className='add-comment'>
+                <FormControl
+                  type="text"
+                  value={this.state.newCommentText}
+                  placeholder="Add a comment"
+                  onChange={this.handleChangeComment}
+                />
+                <Button
+                  onClick={this.handleAddComment}>
+                  Add Comment
+                </Button>
+              </div>
+          </div>
       </div>
     );
   }
 }
 
 Post.propTypes = {
+  addComment: PropTypes.func.isRequired,
+  author: PropTypes.object.isRequired,
   comments: PropTypes.array,   
-  id: PropTypes.number.isRequired,
-  textContent: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default Post;
