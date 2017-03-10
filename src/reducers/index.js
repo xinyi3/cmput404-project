@@ -41,6 +41,32 @@ const mockposts = [
   }
 ];
 
+const mockFriends = [
+  {
+    id: '121212',
+    username: 'Sad Frog',
+    isFollower: true
+  },
+  {
+    id: '23232323',
+    username: 'Feelsbadman',
+    isFollower: false
+  }
+];
+
+const mockFriendRequests = [
+  {
+    id: '121212',
+    username: 'Happy Frog?',
+    isFollower: false
+  },
+  {
+    id: '23232323',
+    username: 'Feelsgoodman?',
+    isFollower: false
+  }
+];
+
 const mockState = normalize(mockposts, schema).entities;
 
 function posts(state=mockState.posts, action) {
@@ -86,4 +112,15 @@ function users(state=mockState.users, action) {
   }
 }
 
-export default combineReducers({posts, comments, users});
+function friends(state ={
+  friendList: mockFriends,
+  friendRequests: mockFriendRequests
+},action){
+  switch (action.type) {
+  default:
+    return state;
+  }
+}
+
+
+export default combineReducers({posts, comments, users, friends});

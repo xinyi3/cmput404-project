@@ -2,26 +2,27 @@ import React, { Component, PropTypes } from 'react';
 import {ListGroup, ListGroupItem, Nav, NavItem} from 'react-bootstrap';
 
 class Sidebar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       key:1
     };
     this.handleSelect=this.handleSelect.bind(this);
   }
   handleSelect(key) {
-    // alert('selected ' + selectedKey);
     this.setState({key:key});
+    if (key == 1){
+      this.props.updateContent("posts-list");
+    }else if (key == 2){
+      this.props.updateContent("friends-list");
+    }
+   
   }
 
   render() {
     return (
       <div className='sidebar'>
         <h1>Coolbears</h1>
-        {/*<ListGroup>
-          <ListGroupItem>Stream</ListGroupItem>
-          <ListGroupItem>Following</ListGroupItem>
-        </ListGroup>*/}
 
         <Nav 
           bsStyle="pills" 
@@ -38,5 +39,8 @@ class Sidebar extends Component {
   }
 }
 
+Sidebar.propTypes = {
+  updateContent: PropTypes.func.isRequired,
+};
 
 export default Sidebar;
