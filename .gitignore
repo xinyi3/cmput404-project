@@ -8,6 +8,8 @@ coverage
 
 # production
 build
+bundle.js
+server/static
 
 # misc
 .DS_Store
