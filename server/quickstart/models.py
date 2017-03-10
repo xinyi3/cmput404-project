@@ -1,18 +1,30 @@
 from __future__ import unicode_literals
-from django.contrib.auth.models import User
 
 from django.db import models
 
 # Create your models here.
 
+class User(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
 class Post(models.Model):
-    title = models.CharField(max_length=140)
     text = models.CharField(max_length=140)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __unicode__(self):
+        return self.text
+
+
 class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.CharField(max_length=140)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return self.text
 
 class FollowingRelationship(models.Model):
     userAis = models.ForeignKey(User, related_name='userAis')

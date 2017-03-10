@@ -1,16 +1,14 @@
-from django.contrib.auth.models import User
 from rest_framework import viewsets
 from server.quickstart.serializers import UserSerializer, PostSerializer, CommentSerializer, FollowingRelationshipSerializer
-from server.quickstart.models import Post, Comment, FollowingRelationship
+from server.quickstart.models import Post, Comment, FollowingRelationship, User
 
 
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Users to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
+    queryset = User.objects.all()
     serializer_class = UserSerializer
-
 
 class PostViewSet(viewsets.ModelViewSet):
     """
