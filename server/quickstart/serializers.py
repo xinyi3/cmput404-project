@@ -2,7 +2,7 @@ from rest_framework import serializers
 from models import Post, Comment, FollowingRelationship, User
 
 
-class FollowingRelationshipSerializer(serializers.HyperlinkedModelSerializer):
+class FollowingRelationshipSerializer(serializers.ModelSerializer):
     class Meta:
         model = FollowingRelationship
         fields = ('userAis', 'followingUserB')
