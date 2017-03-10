@@ -6,10 +6,16 @@ class FriendList extends Component {
     return (
       <div className='friend-page'>
         <div className='friend-requests'>
-          {this.props.friendRequests.map(friend => <FriendListItem key={friend.id} {...friend}/>)}
+          {this.props.friendRequests.map(friend => <FriendListItem key={friend.id}
+          {
+            ...friend}/>)
+          }
         </div>
         <div className='friend-list'>
-          {this.props.friends.map(friend => <FriendListItem key={friend.id} {...friend}/>)}
+          {this.props.friends.map(friend => <FriendListItem key={friend.id} 
+          {
+            ...friend}/>)
+          }
         </div>
       </div>
     );
