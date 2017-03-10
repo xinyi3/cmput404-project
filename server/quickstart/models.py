@@ -12,15 +12,15 @@ class User(models.Model):
 
 class Post(models.Model):
     text = models.CharField(max_length=140)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.text
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='comments')
+    author = models.ForeignKey(User)
     text = models.CharField(max_length=140)
 
     def __unicode__(self):
