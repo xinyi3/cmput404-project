@@ -22,20 +22,10 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 # When we read we get the nested data, but we only have to passed the author_id when we write
 class CommentSerializer(serializers.ModelSerializer):
+    author = AuthorSerializer(read_only=True)
     class Meta:
         model = Comment
-        fields='__all__'
-    
-    # http://www.django-rest-framework.org/api-guide/serializers/#baseserializer
-    def to_representation(self, obj):
-        return {
-            'id': obj.id,
-            'comment': obj.comment,
-            'author': {
-                'id': obj.author.id,
-                'displayName': obj.author.displayName
-            }
-        }
+        fields=('id', 'comment', 'author')
     
     def to_internal_value(self, data):
         return {
@@ -47,6 +37,7 @@ class CommentSerializer(serializers.ModelSerializer):
 # When we read we get the nested data, but we only have to passed the author_id when we write
 class PostSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
+    author = AuthorSerializer(read_only=True)
 
     class Meta:
         model = Post
