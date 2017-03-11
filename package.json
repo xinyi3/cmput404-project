@@ -7,7 +7,8 @@
     "test": "eslint src/ test/ && mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:nyan": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test --reporter nyan",
     "test:watch": "npm run test -- --watch",
-    "build": "webpack --progress --colors && cp index.html server/static/ && mv bundle.js server/static/"
+    "postinstall": "node_modules/webpack/bin/webpack.js",
+    "build": "webpack --progress --colors"
   },
   "author": "",
   "license": "ISC",
@@ -42,6 +43,6 @@
     "redux-logger": "^2.7.4",
     "redux-promise-middleware": "^4.2.0",
     "redux-thunk": "^2.1.0",
-    "style-loader": "^0.13.2"
+    "webpack": "^1.12.9",    "style-loader": "^0.13.2"
   }
 }
