@@ -33,13 +33,16 @@ class CommentList(generics.ListCreateAPIView):
     """
     serializer_class = CommentSerializer
 
+    # http://www.django-rest-framework.org/api-guide/filtering/#filtering-against-the-current-user
     def get_queryset(self):
         post = self.kwargs['post']
         return Comment.objects.filter(post=post)
     
     # Written by andi (http://stackoverflow.com/users/953553/andi) http://stackoverflow.com/a/34084329, modified by Kyle Carlstrom
     def get_serializer_context(self):
-        return {'post': self.kwargs['post']}
+        return {
+            'post': self.kwargs['post']
+            }
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
